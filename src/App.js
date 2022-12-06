@@ -1,25 +1,147 @@
-import logo from './logo.svg';
+import {useEffect, useState} from 'react';
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {initializeApp} from 'firebase/app';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+////////17:30
+
+//Styles and Components
 import './App.css';
+import CreatePostPage from './pages/CreatePost';
+import CreateUserPage from "./pages/CreateUser";
+import DashboardPage from './pages/Dashboard';
+import FindFriendsPage from './pages/FindFriends';
+import LoginPage from "./pages/Login";
+import UserProfilePage from "./pages/UserProfile";
+
+
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA7_OEg_Oxf3qz5_8obmy7IcMwIvYojxmI",
+  authDomain: "final-project-fall.firebaseapp.com",
+  projectId: "final-project-fall",
+  storageBucket: "final-project-fall.appspot.com",
+  messagingSenderId: "848308109783",
+  appId: "1:848308109783:web:7a567093bcb51b80664b92"
+};
+
+
 
 function App() {
+  const [appInitialized, setAppInitialized] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userInformation, setUserInformation] = useState({});
+
+
+
+  useEffect(()=>{
+    initializeApp(firebaseConfig);
+    setAppInitialized(true);
+  }, []);
+
+  // Check to see if user is logged in
+  // user loads page, check their status
+  // Set state accordingly
+
+  useEffect(()=>{
+    if (appInitialized){
+      const auth = getAuth();
+      onAuthStateChanged(auth,(user)=>{
+        if (user) {
+          // User is signed in, see docs for a lsit of available properties
+          setUserInformation(user);
+          setIsLoggedIn(true);
+        } else {
+          // User is signed out
+          setUserInformation({});
+          setIsLoggedIn(false)
+        }
+        // Whenever state changes setloading to false
+        setIsLoading(false);
+      })
+    }
+  }, [appInitialized])
+
+  const router = createBrowserRouter([
+    {
+      path: "/user/:id",
+      element: 
+        <UserProfilePage
+          isLoggedIn = {isLoggedIn}
+          setIsLoggedIn = {setIsLoggedIn}
+          isLoading = {isLoading}
+          userInformation = {userInformation}
+          setUserInformation = {setUserInformation}
+
+        />,
+    },
+    {
+      path: "/create",
+      element: 
+        <CreatePostPage
+          isLoggedIn = {isLoggedIn}
+          setIsLoggedIn = {setIsLoggedIn}
+          isLoading = {isLoading}
+          userInformation = {userInformation}
+          setUserInformation = {setUserInformation}
+
+        />,
+    },
+    {
+      path: "/find-friends",
+      element: 
+        <FindFriendsPage
+          isLoggedIn = {isLoggedIn}
+          setIsLoggedIn = {setIsLoggedIn}
+          isLoading = {isLoading}
+          userInformation = {userInformation}
+          setUserInformation = {setUserInformation}
+
+        />,
+    },
+    {
+      path: "/",
+      element: 
+        <DashboardPage
+          isLoggedIn = {isLoggedIn}
+          setIsLoggedIn = {setIsLoggedIn}
+          isLoading = {isLoading}
+          userInformation = {userInformation}
+          setUserInformation = {setUserInformation}
+
+        />,
+    },
+
+    {
+      path: "/login",
+      element: 
+        <LoginPage
+          isLoggedIn = {isLoggedIn}
+          setIsLoggedIn = {setIsLoggedIn}
+          setUserInformation = {setUserInformation}
+        />,
+    },
+    {
+      path: "/create",
+      element: 
+        <CreateUserPage
+          isLoggedin={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+          setUserInformation={setUserInformation}
+        />,
+    },
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RouterProvider router={router} />
     </div>
   );
+  
+ 
+
 }
 
 export default App;
