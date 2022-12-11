@@ -78,7 +78,7 @@ function App() {
         />,
     },
     {
-      path: "/create",
+      path: "/create-post",
       element: 
         <CreatePostPage
           isLoggedIn = {isLoggedIn}

@@ -17,7 +17,7 @@ function UserProfilePage({ isLoading, isLoggedIn, setIsLoggedIn, setUserInformat
                 setUserInformation={setUserInformation}
             />
             <div  className = "PageWrapper">
-                <p>Dashboard</p>
+                <p>Home Page</p>
             </div>   
         </>
     ); 

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import { getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
 import CreateUserForm from '../components/CreateUserForm';
 import Header from '../components/Header';
+import { Link } from 'react-router-dom';
 
 function CreateUserPage({ isLoggedIn, setIsLoggedIn, setUserInformation}){
     const [errors, setErrors] = useState();
@@ -47,18 +48,15 @@ function CreateUserPage({ isLoggedIn, setIsLoggedIn, setUserInformation}){
 
 
     return (
-        <>
-            <Header 
-                isLoggedIn={isLoggedIn}
-                setIsLoggedIn={setIsLoggedIn} 
-                setUserInformation={setUserInformation}
-            />
-            <div className = "PageWrapper">
-                <h1>Create User</h1>
+            <div className = "LoginWrapper">
+                <h1 className='LoginLogo'>Create User</h1>
                 <CreateUserForm signUpUser={signUpUser}/>
                 <p>{errors}</p>
+                <p className='CreateUserText'>Already have an account?</p>
+                <p className='CreateUserText'>
+                    <Link to="/login">Login</Link>
+                </p>
             </div>  
-        </>  
     );
 };
 

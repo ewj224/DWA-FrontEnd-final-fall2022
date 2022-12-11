@@ -1,0 +1,120 @@
+.LoginLogo {
+    font-size: 50px;
+    font-weight: lighter;
+    line-height: 48px;
+    margin: 0;
+}
+
+.LoginWrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #D9D9D9;
+    border-radius: 43px;
+    margin: auto;
+    margin-top: 100px;
+    max-width: 500px;
+    min-height: 60vh;
+}
+
+.FormElement {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 40%;
+    
+}
+
+.FormElement input {
+    appearance: none;
+    background-color: white;
+    border: none;
+    border-radius: 43px;
+    font-size: 15px;
+    max-width: 300px;
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.FormElement label {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+.Button {
+    appearance: none;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 43px;
+    margin-top: 30px;
+    max-width: 100px;
+    padding: 6px;
+}
+
+.BoldLoginText {
+    font-size: 12px;
+    margin-bottom: -15px;
+    margin-top: -10px;
+}
+
+.LoginCreateUser {
+    font-size: 12px;
+    color: black;
+}
+
+.CreateUserText {
+    font-size: 12px;
+    color: black;
+    margin-top: -5px;
+
+}
+
+header {
+    background-color: #D9D9D9;
+    border-radius: 43px;
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+    
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    margin-top: 10px;
+    max-width: 1080px;
+    width: 100%
+}
+
+nav p {
+    background-color: #D9D9D9;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: lighter;
+    margin: 0 0 0 40px;
+    text-decoration: underline;
+}
+
+.HeaderButton {
+    appearance: none;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 43px;
+    font-size: 16px;
+    max-width: 100px;
+    margin-left:27px;
+    margin-top: -3.5px;
+    padding: 6px;
+}
+
+.HeaderLogo {
+    font-size: 25px;
+}

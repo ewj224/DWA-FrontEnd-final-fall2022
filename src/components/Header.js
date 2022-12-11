@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom"
 import {getAuth, signOut} from "firebase/auth"
 
-function Header({isLoggedIn, setIsLoggedIn, setUserInformation}){
+function Header({setIsLoggedIn, setUserInformation}){
     function logout(){
         const auth = getAuth();
         signOut(auth)
@@ -18,17 +18,13 @@ function Header({isLoggedIn, setIsLoggedIn, setUserInformation}){
 
     return (
         <header>
+            <p className='HeaderLogo'>CANVAS</p>
             <nav>
-                {isLoggedIn && <Link to='/'>
-                    <p>Home</p>
-                </Link>}
-                {!isLoggedIn && <Link to='/login'>
-                    <p>Login</p>
-                </Link>}
-                {!isLoggedIn && <Link to='/create'>
-                    <p>Create User</p>
-                </Link>}
-                {isLoggedIn && <p onClick={()=> logout()}>Log Out</p>}
+            <p><Link to='/'>Home Page</Link></p>
+            <p><Link to='/user/0'>My Profile</Link></p>
+            <p onClick={()=> logout()}>Log Out</p>
+            <button className='HeaderButton'><Link to='/create-post'>Create Post</Link></button>
+            
             </nav>  
         </header>
     );

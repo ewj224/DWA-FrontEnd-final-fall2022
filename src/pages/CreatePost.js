@@ -17,7 +17,7 @@ function CreatePostPage({ isLoading, isLoggedIn, setIsLoggedIn, setUserInformati
                 setUserInformation={setUserInformation}
             />
             <div  className = "PageWrapper">
-                <p>Create Post</p>
+                <p>OnCreatePostPage</p>
             </div>   
         </>
     ); 
