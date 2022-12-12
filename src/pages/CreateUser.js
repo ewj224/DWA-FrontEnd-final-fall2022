@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
 import CreateUserForm from '../components/CreateUserForm';
-import Header from '../components/Header';
 import { Link } from 'react-router-dom';
 
 function CreateUserPage({ isLoggedIn, setIsLoggedIn, setUserInformation}){

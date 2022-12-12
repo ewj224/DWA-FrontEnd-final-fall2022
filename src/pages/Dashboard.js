@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {useNavigate } from "react-router-dom"
+import DashboardPost from '../components/DashboardPost';
 import Header from '../components/Header';
 
 function UserProfilePage({ isLoading, isLoggedIn, setIsLoggedIn, setUserInformation}){
@@ -16,8 +17,15 @@ function UserProfilePage({ isLoading, isLoggedIn, setIsLoggedIn, setUserInformat
                 setIsLoggedIn={setIsLoggedIn} 
                 setUserInformation={setUserInformation}
             />
-            <div  className = "PageWrapper">
-                <p>Home Page</p>
+            <div  className = "DashboardPage">
+            <p className= 'DashboardTitle'>Home Page</p>
+                <div className = 'DashboardPageWrapper'>
+                    <DashboardPost />
+                    <DashboardPost />
+                    <DashboardPost />
+                    <DashboardPost />
+                </div>
+                
             </div>   
         </>
     ); 

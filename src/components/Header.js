@@ -17,16 +17,15 @@ function Header({setIsLoggedIn, setUserInformation}){
 
 
     return (
-        <header>
+        <div className='Header'>
             <p className='HeaderLogo'>CANVAS</p>
             <nav>
             <p><Link to='/'>Home Page</Link></p>
             <p><Link to='/user/0'>My Profile</Link></p>
             <p onClick={()=> logout()}>Log Out</p>
             <button className='HeaderButton'><Link to='/create-post'>Create Post</Link></button>
-            
             </nav>  
-        </header>
+        </div>
     );
 };
 

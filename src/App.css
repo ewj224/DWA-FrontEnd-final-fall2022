@@ -71,7 +71,8 @@
 
 }
 
-header {
+.Header {
+    
     background-color: #D9D9D9;
     border-radius: 43px;
     display: flex;
@@ -79,6 +80,7 @@ header {
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 25px;
+    max-width: 1080px;
     padding-left: 40px;
     padding-right: 40px;
     
@@ -117,4 +119,42 @@ nav p {
 
 .HeaderLogo {
     font-size: 25px;
+}
+
+.CreatePostWrapper {
+    align-items: center;
+    display: flex;
+}
+
+.DashboardPage {
+    background-color: #D9D9D9;
+    border-radius: 43px;
+    margin-left: 45px;
+    margin-right: 45px;
+    max-width: 1080px;
+    padding-left: 40px;
+    padding-right: 40px;
+    
+}
+
+.DashboardTitle {
+    font-size: 25px;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+.DashboardPageWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+/* Inside DashboardPost */
+.DashboardPosts {
+    border: 1px solid black;
+    display: flex;
+    margin-bottom: 40px;
+    max-width: 400px;
+    width: 100%;
 }

@@ -16,8 +16,12 @@ function CreatePostPage({ isLoading, isLoggedIn, setIsLoggedIn, setUserInformati
                 setIsLoggedIn={setIsLoggedIn} 
                 setUserInformation={setUserInformation}
             />
-            <div  className = "PageWrapper">
+            <div  className = "CreatePostWrapper">
                 <p>OnCreatePostPage</p>
+                <label htmlfor="title">Title</label>
+                <input type="title" name="title"/>
+                <label htmlfor="content">Content</label>
+                <input type="content" name="content"/>
             </div>   
         </>
     ); 
