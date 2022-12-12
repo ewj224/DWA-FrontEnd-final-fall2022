@@ -72,9 +72,9 @@
 }
 
 .Header {
-    
     background-color: #D9D9D9;
     border-radius: 43px;
+    color: black;
     display: flex;
     align-items: center;
     margin-left: 40px;
@@ -129,6 +129,7 @@ nav p {
 .DashboardPage {
     background-color: #D9D9D9;
     border-radius: 43px;
+    margin-bottom: 45px;
     margin-left: 45px;
     margin-right: 45px;
     max-width: 1080px;
@@ -153,8 +154,8 @@ nav p {
 /* Inside DashboardPost */
 .DashboardPosts {
     border: 1px solid black;
-    display: flex;
     margin-bottom: 40px;
-    max-width: 400px;
+    max-width: 300px;
+    min-height: 300px;
     width: 100%;
 }

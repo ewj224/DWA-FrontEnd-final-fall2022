@@ -18,7 +18,7 @@ function Header({setIsLoggedIn, setUserInformation}){
 
     return (
         <div className='Header'>
-            <p className='HeaderLogo'>CANVAS</p>
+            <p className='HeaderLogo'><Link to="/">CANVAS</Link></p>
             <nav>
             <p><Link to='/'>Home Page</Link></p>
             <p><Link to='/user/0'>My Profile</Link></p>

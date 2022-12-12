@@ -20,7 +20,7 @@ function UserProfilePage({ isLoading, isLoggedIn, setIsLoggedIn, setUserInformat
             <div  className = "DashboardPage">
             <p className= 'DashboardTitle'>Home Page</p>
                 <div className = 'DashboardPageWrapper'>
-                    <DashboardPost />
+                    <DashboardPost CanvasDate = "12/12/22" CanvasTitle = "Weeee" CanvasContent = "ahhhh"/>
                     <DashboardPost />
                     <DashboardPost />
                     <DashboardPost />

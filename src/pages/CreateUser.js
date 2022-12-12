@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
+import { getAuth, updateProfile, createUserWithEmailAndPassword} from 'firebase/auth';
 import CreateUserForm from '../components/CreateUserForm';
 import { Link } from 'react-router-dom';
 
@@ -15,9 +15,12 @@ function CreateUserPage({ isLoggedIn, setIsLoggedIn, setUserInformation}){
     const signUpUser = useCallback(
         (e) => {
             e.preventDefault();
+            if (!e.currentTarget) return;
 
             const email = e.currentTarget.email.value;
             const password = e.currentTarget.password.value;
+            const name = e.currentTarget.name.value;
+            
             const auth = getAuth();
 
             console.log({email, password})
@@ -26,14 +29,24 @@ function CreateUserPage({ isLoggedIn, setIsLoggedIn, setUserInformation}){
                 .then((userCredential)=>{
                     const user = userCredential.user;
                     setIsLoggedIn(true);
-                    setUserInformation({
-                        email: user.email,
-                        displayName: user.displayName,
-                        uid: user.uid,
-                        accessToken: user.accessToke
-                    });
                     setErrors();
-                })
+
+                    updateProfile(user, { displayName: name })
+                        .then(() => {
+                            setUserInformation({
+                                email: user.email,
+                                displayName: name,
+                                uid: user.uid,
+                                accessToken: user.accessToken
+                            });
+                        })
+                        .catch((err) => {
+                            const errorCode = err.code;
+                            const errorMessage = err.message;
+                            console.warn({err, errorCode, errorMessage});
+                            setErrors(errorMessage);
+                        });
+                    })
                 .catch((error)=>{
                     const errorCode = error.code;
                     const errorMessage = error.message;
