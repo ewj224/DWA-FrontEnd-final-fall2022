@@ -18,9 +18,9 @@ function DashboardPage({ isLoading, isLoggedIn, setIsLoggedIn, setUserInformatio
             />
             <div  className = "PageWrapper">
                 <h1>User Profile</h1>
-                <p><strong>Display Name: </strong>{userInformation.displayName}</p>
-                <p><strong>Email: </strong>{userInformation.email}</p>
-                <p><strong>User ID: </strong>{userInformation.uid}</p>
+                <p>Display Name: {userInformation.displayName}</p>
+                <p>Email:{userInformation.email}</p>
+                <p>User ID: {userInformation.uid}</p>
             </div>   
         </>
     ); 

@@ -138,16 +138,17 @@ nav p {
     
 }
 
-.DashboardTitle {
+/* .DashboardTitle {
     font-size: 25px;
     margin-top: 30px;
     padding-top: 20px;
-}
+} */
 
 .DashboardPageWrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 40px;
 }
 
 
@@ -155,7 +156,32 @@ nav p {
 .DashboardPosts {
     border: 1px solid black;
     margin-bottom: 40px;
+    margin-top: 40px;
     max-width: 300px;
+    padding-left: 25px;
     min-height: 300px;
     width: 100%;
+}
+
+.Title {
+    font-size: 30px;
+}
+.Date {
+    font-size: 20px;
+}
+
+.Content {
+    font-size: 15px;
+}
+
+.PageWrapper {
+    background-color: #D9D9D9;
+    border-radius: 43px;
+    font-weight: lighter;
+    margin-bottom: 45px;
+    margin-left: 45px;
+    margin-right: 45px;
+    max-width: 1080px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
