@@ -1,11 +1,12 @@
-import React, {useEffect, useCallback} from 'react';
+import React, {useEffect, useCallback, useState} from 'react';
 import {useNavigate } from "react-router-dom"
 import Header from '../components/Header';
 import CreatePostForm from '../components/CreatePostForm';
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 function CreatePostPage({ app, isLoading, isLoggedIn, setIsLoggedIn, setUserInformation, userInformation}){
-   const navigate = useNavigate();
+    const [postSuccessful, setPostSuccessful] = useState(false);
+    const navigate = useNavigate();
 
     const createPost = useCallback(async(e) => {
         e.preventDefault();
@@ -21,6 +22,7 @@ function CreatePostPage({ app, isLoading, isLoggedIn, setIsLoggedIn, setUserInfo
                 Content
             });
             console.log("Document written with ID: ", docRef.id);
+            setPostSuccessful(true);
         } catch (e) {
             console.error("Error adding document: ",e)
         }
@@ -38,6 +40,8 @@ function CreatePostPage({ app, isLoading, isLoggedIn, setIsLoggedIn, setUserInfo
                 setUserInformation={setUserInformation}
             />
             <CreatePostForm createPost = {createPost}/>
+            {/* remember to style this portion */}
+            {postSuccessful && <p>On the canvas it goes!</p>}
         </>
     ); 
 }
