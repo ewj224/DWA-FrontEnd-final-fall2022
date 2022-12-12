@@ -42,9 +42,9 @@ function DashboardPage({ app, isLoading, isLoggedIn, setIsLoggedIn, setUserInfor
                 <div className = 'DashboardPageWrapper'>
                     {postData.map((post) => (
                         <DashboardPost 
-                            CanvasDate = {post.Date} 
-                            CanvasTitle = {post.Title} 
-                            CanvasContent = {post.Content}
+                            Date = {post.Date} 
+                            Title = {post.Title} 
+                            Content = {post.Content}
                         />
                     ))}
                 </div>

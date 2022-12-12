@@ -81,11 +81,13 @@ function App() {
       path: "/create-post",
       element: 
         <CreatePostPage
+          app = {initializeApp}
           isLoggedIn = {isLoggedIn}
           setIsLoggedIn = {setIsLoggedIn}
           isLoading = {isLoading}
           userInformation = {userInformation}
           setUserInformation = {setUserInformation}
+
 
         />,
     },
