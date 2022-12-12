@@ -105,7 +105,7 @@ function App() {
       path: "/",
       element: 
         <DashboardPage
-        app = {appInitialized}
+          app = {appInitialized}
           isLoggedIn = {isLoggedIn}
           setIsLoggedIn = {setIsLoggedIn}
           isLoading = {isLoading}

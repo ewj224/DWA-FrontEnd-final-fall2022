@@ -1,40 +1,35 @@
-import React, {useEffect, useState, useMemo} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import {useNavigate } from "react-router-dom";
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import DashboardPost from '../components/DashboardPost';
 import Header from '../components/Header';
 
-function UserProfilePage({ app, isLoading, isLoggedIn, setIsLoggedIn, setUserInformation}){
+const queryData = async (app) => {
+    if (!app) return [];
+    const db = getFirestore(app); 
+    const querySnapshot = await getDocs(collection(db, "posts"));
+    const data = [];
+    querySnapshot.forEach((doc)=>{
+        data.push(doc.data())
+    });
+    return data;
+};
+
+
+function DashboardPage({ app, isLoading, isLoggedIn, setIsLoggedIn, setUserInformation}){
    const navigate = useNavigate();
+   const [postData, setPostData] = useState([]);
 
     useEffect(()=>{
         if (!isLoggedIn && !isLoading) navigate('/login');
     }, [isLoading, isLoggedIn, navigate])
 
-    // useEffect(async ()=>{
-    //     if (postData.length > 0) return;
-    //     const db = getFirestore(app); 
-    //     const querySnapshot = await getDocs(collection(db, "posts"));
-    //     const data = [];
-    //     querySnapshot.forEach((doc)=>{
-    //         data.push(doc.data())
-    //     })
-    //     setPostData(data);
-    // }, [app])
-
-    const postData = useMemo(async ()=>{
-        if (postData.length > 0) return;
-        const db = getFirestore(app); 
-        const querySnapshot = await getDocs(collection(db, "posts"));
-        const data = [];
-        querySnapshot.forEach((doc)=>{
-            data.push(doc.data())
-        })
-
-    },[])
-    console.log({postData});
-
-//13:22
+    useEffect(() => {
+        if (!app) return;
+        queryData(app).then(setPostData);
+    }, [app]);
+  
+    console.log ({postData});
 
     return (
         <>
@@ -45,10 +40,13 @@ function UserProfilePage({ app, isLoading, isLoggedIn, setIsLoggedIn, setUserInf
             />
             <div  className = "DashboardPage">
                 <div className = 'DashboardPageWrapper'>
-                    <DashboardPost CanvasDate = "12/12/22" CanvasTitle = "Weeee" CanvasContent = "ahhhh"/>
-                    <DashboardPost />
-                    <DashboardPost />
-                    <DashboardPost />
+                    {postData.map((post) => (
+                        <DashboardPost 
+                            CanvasDate = {post.Date} 
+                            CanvasTitle = {post.Title} 
+                            CanvasContent = {post.Content}
+                        />
+                    ))}
                 </div>
                 
             </div>   
@@ -56,4 +54,4 @@ function UserProfilePage({ app, isLoading, isLoggedIn, setIsLoggedIn, setUserInf
     ); 
 }
 
-export default UserProfilePage;
+export default DashboardPage;
