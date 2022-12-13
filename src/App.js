@@ -13,6 +13,7 @@ import DashboardPage from './pages/Dashboard';
 import FindFriendsPage from './pages/FindFriends';
 import LoginPage from "./pages/Login";
 import UserProfilePage from "./pages/UserProfile";
+// import IndividualPost from "./pages/IndividualPost"
 
 
 
@@ -77,6 +78,17 @@ function App() {
 
         />,
     },
+    // {
+    //   path: "/post/:id",
+    //   element: 
+    //     <IndividualPost
+    //       isLoggedIn = {isLoggedIn}
+    //       setIsLoggedIn = {setIsLoggedIn}
+    //       isLoading = {isLoading}
+    //       userInformation = {userInformation}
+    //       setUserInformation = {setUserInformation}
+    //     />,
+    // },
     {
       path: "/create-post",
       element: 

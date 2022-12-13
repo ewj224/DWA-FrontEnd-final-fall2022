@@ -3,11 +3,11 @@ import React from "react";
 function CreateUserForm ({signUpUser}) {
     return (
     <form className = "FormElement" onSubmit={(e)=> signUpUser(e)}>
-        <label htmlfor="displayName">Name</label>
+        <label htmlFor="displayName">Name</label>
         <input type="text" name="displayName"/>
-        <label htmlfor="email">Email</label>
+        <label htmlFor="email">Email</label>
         <input type="email" name="email"/>
-        <label htmlfor="password">Password</label>
+        <label htmlFor="password">Password</label>
         <input type="password" name="password"/>
 
 

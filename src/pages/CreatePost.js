@@ -15,11 +15,14 @@ function CreatePostPage({ app, isLoading, isLoggedIn, setIsLoggedIn, setUserInfo
         const Title = e.currentTarget.Title.value;
         const Date = e.currentTarget.Date.value;
         const Content = e.currentTarget.Content.value;
+        const Mood = e.currentTarget.Mood.value;
+
         try {
             const docRef = await addDoc(collection(db, "posts"),{
                 Title,
                 Date,
-                Content
+                Content,
+                Mood
             });
             console.log("Document written with ID: ", docRef.id);
             setPostSuccessful(true);

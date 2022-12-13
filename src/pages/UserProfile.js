@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useNavigate } from "react-router-dom"
 import Header from '../components/Header';
 
-function DashboardPage({ isLoading, isLoggedIn, setIsLoggedIn, setUserInformation, userInformation}){
+function UserProfilePage({ isLoading, isLoggedIn, setIsLoggedIn, setUserInformation, userInformation}){
    const navigate = useNavigate();
 
     useEffect(()=>{
@@ -26,4 +26,4 @@ function DashboardPage({ isLoading, isLoggedIn, setIsLoggedIn, setUserInformatio
     ); 
 }
 
-export default DashboardPage;
+export default UserProfilePage;

@@ -45,6 +45,7 @@ function DashboardPage({ app, isLoading, isLoggedIn, setIsLoggedIn, setUserInfor
                             Date = {post.Date} 
                             Title = {post.Title} 
                             Content = {post.Content}
+                            Mood = {post.Mood}
                         />
                     ))}
                 </div>

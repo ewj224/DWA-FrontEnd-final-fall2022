@@ -5,17 +5,19 @@ function CreatePostForm  ({createPost}) {
     return (
     <div className="CreatePostWrapper">
         <form className = "CreateForm" onSubmit={(e)=> createPost(e)}>
-        <label htmlfor="Title">Title</label>
+        <label htmlFor="Title">Title</label>
         <input type="text" name="Title"/>
-        <label htmlfor="Date">Date</label>
+        <label htmlFor="Date">Date</label>
         <input type="text" name="Date"/>
-        <label htmlfor="Content">Content</label>
+        <label htmlFor="Content">Content</label>
         <input className="Content" type="text" name="Content"/>
-        <select name="mood">
+        <select name="Mood">
             <option value="">How are you feeling?</option>
-            <option value="blue">Sad</option>
-            <option value="yellow">Happy</option>
+            <option value="#9bf6ff">Sad</option>
+            <option value="#fdffb6">Happy</option>
         </select>
+        {/* <label htmlfor="Mood">Mood</label>
+        <input className="Mood" type="text" name="Mood"/> */}
 
         <div>
             <button type="submit" className="Button">Create</button>
