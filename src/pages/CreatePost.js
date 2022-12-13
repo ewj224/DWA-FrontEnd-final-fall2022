@@ -1,4 +1,4 @@
-import React, {useEffect, useCallback, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {useNavigate } from "react-router-dom"
 import Header from '../components/Header';
 import CreatePostForm from '../components/CreatePostForm';
@@ -12,17 +12,18 @@ function CreatePostPage({ app, isLoading, isLoggedIn, setIsLoggedIn, setUserInfo
         e.preventDefault();
         const db = getFirestore(app);
 
-        const Title = e.currentTarget.Title.value;
-        const Date = e.currentTarget.Date.value;
         const Content = e.currentTarget.Content.value;
+        const Date = e.currentTarget.Date.value;
         const Mood = e.currentTarget.Mood.value;
+        const Title = e.currentTarget.Title.value;
 
         try {
             const docRef = await addDoc(collection(db, "posts"),{
-                Title,
-                Date,
                 Content,
-                Mood
+                Date,
+                Mood,
+                Title
+                
             });
             console.log("Document written with ID: ", docRef.id);
             setPostSuccessful(true);

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DashboardPost({ Content, Date, Title, Mood }){
+function DashboardPost({ Content, Date,  Mood, Title}){
     return (
         <div className='DashboardPosts' style={{backgroundColor:`${Mood}`}}>
             {/* date and color - clicking actual square itself will lead to the post */}

@@ -14,18 +14,15 @@ function CreatePostForm  ({createPost}) {
         <div className="Mood">
             <select name="Mood">
                 <option value="">How are you feeling?</option>
-                <option value="#9bf6ff">Surprise</option>
+                <option value="#9bf6ff">Surprised</option>
                 <option value="#fdffb6">Happy</option>
                 <option value="#bdb2ff">Sad</option>
-                <option value="#ffd6a5">Fear</option>
-                <option value="#caffbf">Digust</option>
-                <option value="#ffadad">Anger</option>
+                <option value="#ffd6a5">Fearful</option>
+                <option value="#caffbf">Digusted</option>
+                <option value="#ffadad">Angry</option>
 
             </select>
         </div>
-        {/* <label htmlfor="Mood">Mood</label>
-        <input className="Mood" type="text" name="Mood"/> */}
-
         <div>
             <button type="submit" className="Button">Create</button>
         </div>

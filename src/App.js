@@ -11,9 +11,6 @@ import DashboardPage from './pages/Dashboard';
 import LoginPage from "./pages/Login";
 import UserProfilePage from "./pages/UserProfile";
 
-
-
-
 const firebaseConfig = {
   apiKey: "AIzaSyA7_OEg_Oxf3qz5_8obmy7IcMwIvYojxmI",
   authDomain: "final-project-fall.firebaseapp.com",
@@ -23,21 +20,16 @@ const firebaseConfig = {
   appId: "1:848308109783:web:7a567093bcb51b80664b92"
 };
 
-
-
 function App() {
   const [appInitialized, setAppInitialized] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userInformation, setUserInformation] = useState({});
 
-
-
   useEffect(()=>{
     const app = initializeApp(firebaseConfig);
     setAppInitialized(app);
   }, []);
-
 
   useEffect(()=>{
     if (appInitialized){
@@ -82,8 +74,6 @@ function App() {
           isLoading = {isLoading}
           userInformation = {userInformation}
           setUserInformation = {setUserInformation}
-
-
         />,
     },
     {

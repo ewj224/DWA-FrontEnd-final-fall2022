@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { getAuth, updateProfile, createUserWithEmailAndPassword} from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, updateProfile } from 'firebase/auth';
 import CreateUserForm from '../components/CreateUserForm';
 import { Link } from 'react-router-dom';
 
@@ -18,8 +18,9 @@ function CreateUserPage({ isLoggedIn, setIsLoggedIn, setUserInformation}){
             if (!e.currentTarget) return;
 
             const email = e.currentTarget.email.value;
-            const password = e.currentTarget.password.value;
             const name = e.currentTarget.name.value;
+            const password = e.currentTarget.password.value;
+            
             
             const auth = getAuth();
 

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useNavigate } from "react-router-dom";
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs , getFirestore } from 'firebase/firestore';
 import ProfileStyle from '../components/ProfileStyle';
 import Header from '../components/Header'
 

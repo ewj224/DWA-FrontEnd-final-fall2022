@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useNavigate } from "react-router-dom";
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { collection, getFirestore, getDocs } from 'firebase/firestore';
 import DashboardPost from '../components/DashboardPost';
 import Header from '../components/Header';
 

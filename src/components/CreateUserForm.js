@@ -10,7 +10,6 @@ function CreateUserForm ({signUpUser}) {
         <label htmlFor="password">Password</label>
         <input type="password" name="password"/>
 
-
         <div>
             <button type="submit" className="Button">Create</button>
         </div>
