@@ -30,7 +30,7 @@ function CreatePostPage({ app, isLoading, isLoggedIn, setIsLoggedIn, setUserInfo
         } catch (e) {
             console.error("Error adding document: ",e)
         }
-}, [app, userInformation]);
+}, [app]);
     
     useEffect(()=>{
         if (!isLoggedIn && !isLoading) navigate('/login');
