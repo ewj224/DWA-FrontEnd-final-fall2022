@@ -241,6 +241,7 @@ nav p {
     border:none;
     justify-content: flex-end;
     display: flex;
+    flex-wrap: wrap;
     margin-top: -150px;
     margin-bottom: 150px;
     padding:  25px;
