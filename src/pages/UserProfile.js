@@ -1,13 +1,33 @@
-import React, {useEffect} from 'react';
-import {useNavigate } from "react-router-dom"
-import Header from '../components/Header';
+import React, {useEffect, useState} from 'react';
+import {useNavigate } from "react-router-dom";
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import ProfileStyle from '../components/ProfileStyle';
+import Header from '../components/Header'
 
-function UserProfilePage({ isLoading, isLoggedIn, setIsLoggedIn, setUserInformation, userInformation}){
+const queryData = async (app) => {
+    if (!app) return [];
+    const db = getFirestore(app); 
+    const querySnapshot = await getDocs(collection(db, "posts"));
+    const data = [];
+    querySnapshot.forEach((doc)=>{
+        data.push(doc.data())
+    });
+    return data;
+};
+
+
+function UserProfilePage({ app, isLoading, isLoggedIn, setIsLoggedIn, setUserInformation, userInformation}){
    const navigate = useNavigate();
+   const [postData, setPostData] = useState([]);
 
     useEffect(()=>{
         if (!isLoggedIn && !isLoading) navigate('/login');
     }, [isLoading, isLoggedIn, navigate])
+
+    useEffect(() => {
+        if (!app) return;
+        queryData(app).then(setPostData);
+    }, [app]);
 
     return (
         <>
@@ -17,11 +37,20 @@ function UserProfilePage({ isLoading, isLoggedIn, setIsLoggedIn, setUserInformat
                 setUserInformation={setUserInformation}
             />
             <div  className = "PageWrapper">
-                <h1>User Profile</h1>
-                <p>Display Name: {userInformation.displayName}</p>
+                <h1>Profile</h1>
                 <p>Email:{userInformation.email}</p>
-                <p>User ID: {userInformation.uid}</p>
+                <p className='CanvasBlurb'> Welcome to CANVAS. As you continue take on each new day, we hope to remind you that your life is unique and, your story, a true work of art.
+                    To the right of the screen, you will some colors filling into the space. These are the culmination of your posts. We hope to see your CANVAS flourish to depict you!
+                    
+                </p>
             </div>   
+                <div className='ProfileStyle'>
+                    {postData.map((post) => (
+                        <ProfileStyle 
+                            Mood = {post.Mood}
+                        />
+                    ))}
+                </div>   
         </>
     ); 
 }

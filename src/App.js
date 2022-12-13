@@ -3,8 +3,6 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {initializeApp} from 'firebase/app';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-////////17:30
-
 //Styles and Components
 import './App.css';
 import CreatePostPage from './pages/CreatePost';
@@ -40,9 +38,6 @@ function App() {
     setAppInitialized(app);
   }, []);
 
-  // Check to see if user is logged in
-  // user loads page, check their status
-  // Set state accordingly
 
   useEffect(()=>{
     if (appInitialized){
@@ -68,6 +63,7 @@ function App() {
       path: "/user/:id",
       element: 
         <UserProfilePage
+          app = {appInitialized}
           isLoggedIn = {isLoggedIn}
           setIsLoggedIn = {setIsLoggedIn}
           isLoading = {isLoading}

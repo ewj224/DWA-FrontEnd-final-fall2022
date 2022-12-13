@@ -44,7 +44,7 @@ function CreatePostPage({ app, isLoading, isLoggedIn, setIsLoggedIn, setUserInfo
             />
             <CreatePostForm createPost = {createPost}/>
             {/* remember to style this portion */}
-            {postSuccessful && <div className='Response'><p>On the canvas it goes!</p></div>}
+            {postSuccessful && <div className='Response'><p>On the CANVAS it goes!</p></div>}
         </>
     ); 
 }

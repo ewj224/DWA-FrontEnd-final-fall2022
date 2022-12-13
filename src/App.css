@@ -175,7 +175,7 @@ nav p {
 
 /* Inside DashboardPost */
 .DashboardPosts {
-    border: 1px solid black;
+    border: 1px solid rgb(172, 172, 172);
     margin-bottom: 40px;
     margin-top: 40px;
     max-width: 300px;
@@ -188,6 +188,10 @@ nav p {
 }
 .Date {
     font-size: 20px;
+}
+
+.CanvasBlurb {
+    max-width: 50%;
 }
 .Content {
     border: none;
@@ -215,14 +219,17 @@ nav p {
     margin-bottom: 45px;
     margin-left: 45px;
     margin-right: 45px;
+    margin-top: 45px;
     max-width: 1080px;
+    height: 300px;
     padding-left: 40px;
     padding-right: 40px;
+    padding-top: 40px;
 }
 
 .Response {
-    margin-left: 200px;
-    margin-top: -110px;
+    margin-left: 300px;
+    margin-top: -125px;
 
 }
 
@@ -237,4 +244,15 @@ input {
     border: none;
     margin-bottom: 10px;
     padding: 10px;
+}
+
+.ProfileStyle {
+    border:none;
+    justify-content: flex-end;
+    display: flex;
+    margin-top: -150px;
+    margin-bottom: 150px;
+    padding:  25px;
+    max-width: 1080px;
+    max-height: 920px;
 }
