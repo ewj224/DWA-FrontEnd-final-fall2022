@@ -10,10 +10,8 @@ import './App.css';
 import CreatePostPage from './pages/CreatePost';
 import CreateUserPage from "./pages/CreateUser";
 import DashboardPage from './pages/Dashboard';
-import FindFriendsPage from './pages/FindFriends';
 import LoginPage from "./pages/Login";
 import UserProfilePage from "./pages/UserProfile";
-// import IndividualPost from "./pages/IndividualPost"
 
 
 
@@ -78,17 +76,6 @@ function App() {
 
         />,
     },
-    // {
-    //   path: "/post/:id",
-    //   element: 
-    //     <IndividualPost
-    //       isLoggedIn = {isLoggedIn}
-    //       setIsLoggedIn = {setIsLoggedIn}
-    //       isLoading = {isLoading}
-    //       userInformation = {userInformation}
-    //       setUserInformation = {setUserInformation}
-    //     />,
-    // },
     {
       path: "/create-post",
       element: 
@@ -100,18 +87,6 @@ function App() {
           userInformation = {userInformation}
           setUserInformation = {setUserInformation}
 
-
-        />,
-    },
-    {
-      path: "/find-friends",
-      element: 
-        <FindFriendsPage
-          isLoggedIn = {isLoggedIn}
-          setIsLoggedIn = {setIsLoggedIn}
-          isLoading = {isLoading}
-          userInformation = {userInformation}
-          setUserInformation = {setUserInformation}
 
         />,
     },
@@ -128,7 +103,6 @@ function App() {
 
         />,
     },
-
     {
       path: "/login",
       element: 

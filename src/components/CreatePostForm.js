@@ -10,12 +10,19 @@ function CreatePostForm  ({createPost}) {
         <label htmlFor="Date">Date</label>
         <input type="text" name="Date"/>
         <label htmlFor="Content">Content</label>
-        <input className="Content" type="text" name="Content"/>
-        <select name="Mood">
-            <option value="">How are you feeling?</option>
-            <option value="#9bf6ff">Sad</option>
-            <option value="#fdffb6">Happy</option>
-        </select>
+        <textarea className="CreatePostContent" type="text" name="Content"/>
+        <div className="Mood">
+            <select name="Mood">
+                <option value="">How are you feeling?</option>
+                <option value="#9bf6ff">Surprise</option>
+                <option value="#fdffb6">Happy</option>
+                <option value="#bdb2ff">Sad</option>
+                <option value="#ffd6a5">Fear</option>
+                <option value="#caffbf">Digust</option>
+                <option value="#ffadad">Anger</option>
+
+            </select>
+        </div>
         {/* <label htmlfor="Mood">Mood</label>
         <input className="Mood" type="text" name="Mood"/> */}
 

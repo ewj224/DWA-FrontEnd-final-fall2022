@@ -28,8 +28,6 @@ function DashboardPage({ app, isLoading, isLoggedIn, setIsLoggedIn, setUserInfor
         if (!app) return;
         queryData(app).then(setPostData);
     }, [app]);
-  
-    console.log ({postData});
 
     return (
         <>

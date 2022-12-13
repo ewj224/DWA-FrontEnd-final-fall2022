@@ -23,8 +23,6 @@ function CreateUserPage({ isLoggedIn, setIsLoggedIn, setUserInformation}){
             
             const auth = getAuth();
 
-            console.log({email, password})
-
             createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential)=>{
                     const user = userCredential.user;
