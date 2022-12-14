@@ -239,14 +239,18 @@ nav p {
 
 .ProfileStyle {
     border:none;
-    justify-content: flex-end;
-    display: flex;
-    flex-wrap: wrap;
     margin-top: -150px;
     margin-bottom: 150px;
     padding:  25px;
-    max-width: 1080px;
-    max-height: 920px;
+}
+
+.ProfileStyleWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+    float: right;
+    margin-right: 20vh;
+    margin-top: -50px;
 }
 
 .Response {

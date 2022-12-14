@@ -43,14 +43,17 @@ function UserProfilePage({ app, isLoading, isLoggedIn, setIsLoggedIn, setUserInf
                     To the right of the screen, you will some colors filling into the space. These are the culmination of your posts. We hope to see your CANVAS flourish to depict you!
                     
                 </p>
-            </div>   
-                <div className='ProfileStyle'>
+
+                <div className='ProfileStyleWrapper'>
                     {postData.map((post) => (
                         <ProfileStyle 
                             Mood = {post.Mood}
                         />
                     ))}
-                </div>   
+                </div>       
+            </div>  
+               
+            
         </>
     ); 
 }
